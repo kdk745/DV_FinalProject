@@ -10,7 +10,7 @@ require("leaflet")
 
 shinyServer(function(input, output) {
     
-    df <- eventReactive(input$clicks1,{data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="SELECT Year, Majortopic, Congress, Percentage FROM GALLUPS WHERE ((MAJORTOPIC=\\\'Civil Rights\\\' OR MAJORTOPIC=\\\'Crime\\\' OR MAJORTOPIC=\\\'Education\\\' OR MAJORTOPIC = \\\'Health\\\' OR MAJORTOPIC=\\\'Social Welfare\\\') AND (YEAR > 1960)) ORDER BY YEAR;"'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_kdk745', PASS='orcl_kdk745', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
+    df <- eventReactive(input$clicks1,{data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="SELECT * FROM CHILD_DEATHS WHERE COUNTRY IN (\\\'USA\\\', \\\'Mexico\\\') AND GBDCHILDCAUSES IN (\\\'Acute lower respiratory infections\\\', \\\'Congenital anomalies\\\', \\\'Injuries\\\', \\\'Prematurity\\\', \\\'Other communicable, perinatal and nutritional conditions\\\');"'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_znk74', PASS='orcl_znk74', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
     })
     
     
@@ -19,13 +19,15 @@ shinyServer(function(input, output) {
         coord_cartesian() + 
         scale_x_continuous() +
         scale_y_continuous() +
-        labs(title='Most Important Problems in Social Issues 1960 - 2012') +
-        labs(x=paste("Years"), y=paste("Percentage")) +
+        labs(title='Five Highest Causes of Death in US and Mexico in Children 0 to 4 Years') +
+        labs(x=paste("Years"), y=paste("Deaths")) +
+        labs(color='Causes of Death') +
+        facet_wrap (~COUNTRY) +
         layer(data=df(), 
-              mapping=aes(x=as.numeric((YEAR)), y=PERCENTAGE, color=MAJORTOPIC), 
+              mapping=aes(x=as.numeric((YEAR)), y=DEATHS_0_TO_4_YEARS, color=GBDCHILDCAUSES), 
               stat="identity", 
               stat_params=list(), 
-              geom="point",
+              geom="line",
               geom_params=list(), 
               position=position_identity()
               #position=position_jitter(width=0.3, height=0)

@@ -6,7 +6,7 @@ require(dplyr)
 library(shiny)
 
 navbarPage(
-  title = "DV_SProject1",
+  title = "DV_FinalProject",
   tabPanel(title= "Scatterplot",
            sidebarPanel(
              actionButton(inputId = "clicks1", label = "Click me")

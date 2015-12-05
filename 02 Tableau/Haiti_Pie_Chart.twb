@@ -1,0 +1,814 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 9100.15.0828.1711                                -->
+<workbook source-platform='mac' version='9.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='CHILD_DEATHS (C##CS329E_ZNK74)' inline='true' name='oracle.42343.533894537039' version='9.1'>
+      <connection authentication='RDBMS' class='oracle' port='1521' schema='C##CS329E_ZNK74' server='sayonara.microlab.cs.utexas.edu' service='orcl' username='C##cs329e_znk74'>
+        <relation name='CHILD_DEATHS' table='[C##CS329E_ZNK74].[CHILD_DEATHS]' type='table' />
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>COUNTRY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[COUNTRY]</local-name>
+            <parent-name>[CHILD_DEATHS]</parent-name>
+            <remote-alias>COUNTRY</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>4000</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=178,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GBDCHILDCAUSES</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[GBDCHILDCAUSES]</local-name>
+            <parent-name>[CHILD_DEATHS]</parent-name>
+            <remote-alias>GBDCHILDCAUSES</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>0</scale>
+            <width>4000</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation charset='1' flag='0' name='binary' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_CHR{charset=178,charform=1}&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[CHILD_DEATHS]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEATHS_0_TO_27_DAYS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DEATHS_0_TO_27_DAYS]</local-name>
+            <parent-name>[CHILD_DEATHS]</parent-name>
+            <remote-alias>DEATHS_0_TO_27_DAYS</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEATHS_1_TO_59_MONTHS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DEATHS_1_TO_59_MONTHS]</local-name>
+            <parent-name>[CHILD_DEATHS]</parent-name>
+            <remote-alias>DEATHS_1_TO_59_MONTHS</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DEATHS_0_TO_4_YEARS</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[DEATHS_0_TO_4_YEARS]</local-name>
+            <parent-name>[CHILD_DEATHS]</parent-name>
+            <remote-alias>DEATHS_0_TO_4_YEARS</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>38</precision>
+            <scale>4</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQLT_NUM&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Country' datatype='string' name='[COUNTRY]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Deaths 0 To 27 Days' datatype='real' name='[DEATHS_0_TO_27_DAYS]' role='measure' type='quantitative' />
+      <column caption='Deaths 0 To 4 Years' datatype='real' name='[DEATHS_0_TO_4_YEARS]' role='measure' type='quantitative' />
+      <column caption='Deaths 1 To 59 Months' datatype='real' name='[DEATHS_1_TO_59_MONTHS]' role='measure' type='quantitative' />
+      <column caption='Gbdchildcauses' datatype='string' name='[GBDCHILDCAUSES]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Year' datatype='real' name='[YEAR]' role='dimension' type='ordinal' />
+      <column-instance column='[GBDCHILDCAUSES]' derivation='None' name='[none:GBDCHILDCAUSES:nk]' pivot='key' type='nominal' />
+      <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection class='dataengine' dbname='/Users/kaynekhoury/DV_TProject1/CHILD_DEATHS.tde' schema='Extract' tablename='Extract' update-time='12/05/2015 06:54:23 PM'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <calculations>
+            <calculation column='[Number of Records]' formula='1' />
+          </calculations>
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='4830' timestamp-start='2015-12-05 18:54:23.107' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>COUNTRY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[COUNTRY]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>COUNTRY</remote-alias>
+              <ordinal>0</ordinal>
+              <family>CHILD_DEATHS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>23</approx-count>
+              <scale>1</scale>
+              <width>4000</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Antigua and Barbuda&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;USA&quot;</statistic>
+                <statistic aggregation='Count' datatype='integer'>4830</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>16000</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DEATHS_0_TO_27_DAYS</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[DEATHS_0_TO_27_DAYS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DEATHS_0_TO_27_DAYS</remote-alias>
+              <ordinal>1</ordinal>
+              <family>CHILD_DEATHS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>698</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Sum' datatype='real'>940249.0</statistic>
+                <statistic aggregation='Avg' datatype='real'>194.66853002070394</statistic>
+                <statistic aggregation='Min' datatype='real'>0.0</statistic>
+                <statistic aggregation='Max' datatype='real'>10183.0</statistic>
+                <statistic aggregation='Stdev' datatype='real'>786.75080358702257</statistic>
+                <statistic aggregation='StdevP' datatype='real'>786.66935518848277</statistic>
+                <statistic aggregation='Var' datatype='real'>618976.82694482571</statistic>
+                <statistic aggregation='VarP' datatype='real'>618848.67439266318</statistic>
+                <statistic aggregation='Count' datatype='integer'>4830</statistic>
+                <statistic aggregation='SumXSqr' datatype='real'>3172075988.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>3</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DEATHS_0_TO_4_YEARS</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[DEATHS_0_TO_4_YEARS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DEATHS_0_TO_4_YEARS</remote-alias>
+              <ordinal>2</ordinal>
+              <family>CHILD_DEATHS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1093</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Sum' datatype='real'>2071849.0</statistic>
+                <statistic aggregation='Avg' datatype='real'>428.95424430641822</statistic>
+                <statistic aggregation='Min' datatype='real'>0.0</statistic>
+                <statistic aggregation='Max' datatype='real'>26193.0</statistic>
+                <statistic aggregation='Stdev' datatype='real'>1303.9774761917497</statistic>
+                <statistic aggregation='StdevP' datatype='real'>1303.8424818877293</statistic>
+                <statistic aggregation='Var' datatype='real'>1700357.2584154052</statistic>
+                <statistic aggregation='VarP' datatype='real'>1700005.2175751536</statistic>
+                <statistic aggregation='Count' datatype='integer'>4830</statistic>
+                <statistic aggregation='SumXSqr' datatype='real'>9099753623.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DEATHS_1_TO_59_MONTHS</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[DEATHS_1_TO_59_MONTHS]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>DEATHS_1_TO_59_MONTHS</remote-alias>
+              <ordinal>3</ordinal>
+              <family>CHILD_DEATHS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>795</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Sum' datatype='real'>1131617.0</statistic>
+                <statistic aggregation='Avg' datatype='real'>234.28923395445133</statistic>
+                <statistic aggregation='Min' datatype='real'>0.0</statistic>
+                <statistic aggregation='Max' datatype='real'>26123.0</statistic>
+                <statistic aggregation='Stdev' datatype='real'>852.53249218182521</statistic>
+                <statistic aggregation='StdevP' datatype='real'>852.44423373216773</statistic>
+                <statistic aggregation='Var' datatype='real'>726811.6502257539</statistic>
+                <statistic aggregation='VarP' datatype='real'>726661.17162322265</statistic>
+                <statistic aggregation='Count' datatype='integer'>4830</statistic>
+                <statistic aggregation='SumXSqr' datatype='real'>3774899139.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>GBDCHILDCAUSES</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[GBDCHILDCAUSES]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>GBDCHILDCAUSES</remote-alias>
+              <ordinal>4</ordinal>
+              <family>CHILD_DEATHS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>15</approx-count>
+              <scale>1</scale>
+              <width>4000</width>
+              <contains-null>false</contains-null>
+              <collation flag='0' name='binary' />
+              <statistics>
+                <statistic aggregation='Min' datatype='string'>&quot;Acute lower respiratory infections&quot;</statistic>
+                <statistic aggregation='Max' datatype='string'>&quot;Tetanus&quot;</statistic>
+                <statistic aggregation='Count' datatype='integer'>4830</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteCollation'>&quot;binary&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;heap&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>16000</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>2</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;str&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Number of Records</remote-name>
+              <remote-type>16</remote-type>
+              <local-name>[Number of Records]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Number of Records</remote-alias>
+              <ordinal>5</ordinal>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Sum' datatype='real'>4830.0</statistic>
+                <statistic aggregation='Avg' datatype='real'>1.0</statistic>
+                <statistic aggregation='Min' datatype='integer'>1</statistic>
+                <statistic aggregation='Max' datatype='integer'>1</statistic>
+                <statistic aggregation='Stdev' datatype='real'>0.0</statistic>
+                <statistic aggregation='StdevP' datatype='real'>0.0</statistic>
+                <statistic aggregation='Var' datatype='real'>0.0</statistic>
+                <statistic aggregation='VarP' datatype='real'>0.0</statistic>
+                <statistic aggregation='Count' datatype='integer'>4830</statistic>
+                <statistic aggregation='Median' datatype='integer'>1</statistic>
+                <statistic aggregation='SumXSqr' datatype='real'>4830.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;sint8&quot;</attribute>
+              </attributes>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>YEAR</remote-name>
+              <remote-type>4</remote-type>
+              <local-name>[YEAR]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>YEAR</remote-alias>
+              <ordinal>6</ordinal>
+              <family>CHILD_DEATHS</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>false</contains-null>
+              <statistics>
+                <statistic aggregation='Sum' datatype='real'>9691395.0</statistic>
+                <statistic aggregation='Avg' datatype='real'>2006.5</statistic>
+                <statistic aggregation='Min' datatype='real'>2000.0</statistic>
+                <statistic aggregation='Max' datatype='real'>2013.0</statistic>
+                <statistic aggregation='Stdev' datatype='real'>4.0315462400844568</statistic>
+                <statistic aggregation='StdevP' datatype='real'>4.0311288741492746</statistic>
+                <statistic aggregation='Var' datatype='real'>16.253365085939119</statistic>
+                <statistic aggregation='VarP' datatype='real'>16.25</statistic>
+                <statistic aggregation='Count' datatype='integer'>4830</statistic>
+                <statistic aggregation='Median' datatype='real'>2007.0</statistic>
+                <statistic aggregation='SumXSqr' datatype='real'>19445862555.0</statistic>
+              </statistics>
+              <attributes>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (comparable)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (compression)'>&quot;array&quot;</attribute>
+                <attribute datatype='boolean' name='DebugRemoteMetadata (distinct)'>true</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (ordered)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (size)'>4</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (sort-position)'>0</attribute>
+                <attribute datatype='string' name='DebugRemoteMetadata (sort-sense)'>&quot;asc&quot;</attribute>
+                <attribute datatype='integer' name='DebugRemoteMetadata (storagewidth)'>1</attribute>
+                <attribute datatype='string' name='DebugRemoteType'>&quot;float&quot;</attribute>
+              </attributes>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:YEAR:ok]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>2000.0</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>2004.0</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>2010.0</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>2008.0</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>2005.0</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>2001.0</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>2011.0</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>2009.0</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>2006.0</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>2012.0</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>2013.0</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>2002.0</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>2007.0</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>2003.0</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:GBDCHILDCAUSES:nk]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot;Acute lower respiratory infections&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;HIV/AIDS&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;Tetanus&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;Other noncommunicable diseases&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;Meningitis/encephalitis&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot;Injuries&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;Birth asphyxia and birth trauma&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;Pertussis&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;Other communicable, perinatal and nutritional conditions&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;Malaria&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;Prematurity&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot;Sepsis and other infectious conditions of the newborn&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;Congenital anomalies&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot;Measles&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;Diarrhoeal diseases&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='CHILD_DEATHS (C##CS329E_ZNK74)' name='oracle.42343.533894537039' />
+          </datasources>
+          <datasource-dependencies datasource='oracle.42343.533894537039'>
+            <column caption='Country' datatype='string' name='[COUNTRY]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Deaths 0 To 4 Years' datatype='real' name='[DEATHS_0_TO_4_YEARS]' role='measure' type='quantitative' />
+            <column caption='Gbdchildcauses' datatype='string' name='[GBDCHILDCAUSES]' role='dimension' type='nominal' />
+            <column caption='Year' datatype='real' name='[YEAR]' role='dimension' type='ordinal' />
+            <column-instance column='[COUNTRY]' derivation='None' name='[none:COUNTRY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[GBDCHILDCAUSES]' derivation='None' name='[none:GBDCHILDCAUSES:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DEATHS_0_TO_4_YEARS]' derivation='Sum' name='[sum:DEATHS_0_TO_4_YEARS:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[oracle.42343.533894537039].[none:COUNTRY:nk]'>
+            <groupfilter function='member' level='[none:COUNTRY:nk]' member='&quot;Haiti&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[oracle.42343.533894537039].[none:GBDCHILDCAUSES:nk]'>
+            <groupfilter function='level-members' level='[none:GBDCHILDCAUSES:nk]' />
+          </filter>
+          <slices>
+            <column>[oracle.42343.533894537039].[none:COUNTRY:nk]</column>
+            <column>[oracle.42343.533894537039].[none:GBDCHILDCAUSES:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='599' />
+            <format attr='height' field='[oracle.42343.533894537039].[none:YEAR:ok]' value='436' />
+            <format attr='height' field='[oracle.42343.533894537039].[none:COUNTRY:nk]' value='333' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[oracle.42343.533894537039].[none:GBDCHILDCAUSES:nk]' />
+              <wedge-size column='[oracle.42343.533894537039].[sum:DEATHS_0_TO_4_YEARS:qk]' />
+              <size column='[oracle.42343.533894537039].[sum:DEATHS_0_TO_4_YEARS:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[oracle.42343.533894537039].[none:COUNTRY:nk]</rows>
+        <cols />
+        <pages>
+          <column>[oracle.42343.533894537039].[none:YEAR:ok]</column>
+        </pages>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='CHILD_DEATHS (C##CS329E_ZNK74)' name='oracle.42343.533894537039' />
+          </datasources>
+          <datasource-dependencies datasource='oracle.42343.533894537039'>
+            <column caption='Country' datatype='string' name='[COUNTRY]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Deaths 0 To 4 Years' datatype='real' name='[DEATHS_0_TO_4_YEARS]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='real' name='[YEAR]' role='dimension' type='ordinal' />
+            <column-instance column='[COUNTRY]' derivation='None' name='[none:COUNTRY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[YEAR]' derivation='None' name='[none:YEAR:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DEATHS_0_TO_4_YEARS]' derivation='Sum' name='[sum:DEATHS_0_TO_4_YEARS:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[oracle.42343.533894537039].[none:COUNTRY:nk]'>
+            <groupfilter function='member' level='[none:COUNTRY:nk]' member='&quot;Haiti&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[oracle.42343.533894537039].[none:COUNTRY:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[oracle.42343.533894537039].[none:YEAR:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[oracle.42343.533894537039].[sum:DEATHS_0_TO_4_YEARS:qk]</rows>
+        <cols>([oracle.42343.533894537039].[none:COUNTRY:nk] / [oracle.42343.533894537039].[none:YEAR:ok])</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='currpage' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[oracle.42343.533894537039].[sum:DEATHS_0_TO_4_YEARS:qk]' type='size' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[oracle.42343.533894537039].[none:GBDCHILDCAUSES:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[oracle.42343.533894537039].[:Measure Names]</field>
+          <field>[oracle.42343.533894537039].[none:GBDCHILDCAUSES:nk]</field>
+          <field>[oracle.42343.533894537039].[none:YEAR:ok]</field>
+          <field>[oracle.42343.533894537039].[none:YEAR:qk]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+    <window auto-hidden='0' class='worksheet' maximized='0' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[oracle.42343.533894537039].[none:YEAR:ok]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[oracle.42343.533894537039].[none:COUNTRY:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[oracle.42343.533894537039].[none:COUNTRY:nk]</field>
+          <field>[oracle.42343.533894537039].[none:YEAR:ok]</field>
+        </color-one-way>
+      </highlight>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      IA3CqI371i8AAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+      VCIcDu/og/4f7kg1EzcMCU0AAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>

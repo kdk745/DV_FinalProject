@@ -197,6 +197,15 @@ Click on the menu for each Parameter, and select "Show Parameter Control."
 5. Right Click onto the y-axis of one of the panes, and click "Add Reference Line." Select "Per Cell" for "Scope." Select "Sum" for Value and "Value" for Label. Select "None" for "Line."
 ![](../02 Tableau/Barchart.jpg)
 
+##Barchart: Top 5 Causes of Death in Children 0-27 Days vs. 1-59 Months in Top 5 Countries
+1. Drag "Gbdchildcauses" and "Country" onto the Columns Shelf.
+2. Drag "Deaths 0 to 27 Days" and "Deaths 1 to 59 Months" onto the Rows Shelf.
+3. Drag "Country" onto Color.
+5. Drag the "Five Highest Causes" set and the "Five Highest Countries" set onto Filters.
+4. Right Click onto the y-axis of one of the panes, and click "Add Reference Line." Select "Per Pane" for "Scope." Select "Average" for Value and "Value" for Label. Make the color of the line red.
+5. Right Click onto the y-axis of one of the panes, and click "Add Reference Line." Select "Per Cell" for "Scope." Select "Sum" for Value and "Value" for Label. Select "None" for "Line."
+![](../02 Tableau/Barchart2.jpg)
+
 ##Barchart: Haiti
 ![](../02 Tableau/Haiti Bar.jpg)
 

@@ -122,4 +122,29 @@ shinyServer(function(input, output) {
     paste("This graph shows the top 5 causes of death in children ages 1-59 months in the 5 countries with the highest number of child deaths.", "", "Top 5 Causes: Acute lower respiratory infections, Congenital Anomalies, Injuries, Other communicable, perinatal, & nutritional conditions, and Prematurity", "", "Top 5 Countries: Dominican Republic, Guatemala, Haiti, Mexico, USA", "", "", "WHO's rankings of the world's health systems issued the following ranks: Dominican Republic (51), Guatemala (78), Haiti (138), Mexico (61), U.S. (37)", "", "One interesting thing is that although Haiti's health system is ranked the lowest out of all 5 countries in this set (the U.S. is ranked the highest in the set), it still had lower deaths than the U.S. in 3 categories (Congenital anomalies, Injuries, and Prematurity).", "", "Mexico's health system ranks the 2nd highest in the set, yet it has the highest number of deaths in 4/5 categories (all except prematurity, where it was as close 2nd to the U.S.).", "", "When comparing the age groups 0-27 days vs. 1-59 months:", "", "  -The averages increase in 3/5 of the Causes of Death (Acute lower respiratory infections, Other communicable, prenatal, & nutritional conditions, and Injuries) from the age group 0-27 days to the age group 1-59 months.", "", "  -The biggest increase in average is seen in Acute lower respirator infections, followed closely by Injuries.", "", "  -The biggest decrease in average is seen in Prematurity.", sep="\n")
   })
   
+  df <- eventReactive(input$clicks3,{data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="SELECT * FROM CHILD_DEATHS WHERE COUNTRY IN (\\\'USA\\\', \\\'Mexico\\\') AND GBDCHILDCAUSES IN (\\\'Acute lower respiratory infections\\\', \\\'Congenital anomalies\\\', \\\'Injuries\\\', \\\'Prematurity\\\', \\\'Other communicable, perinatal and nutritional conditions\\\');"'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_znk74', PASS='orcl_znk74', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
+  })
+  
+  
+  output$scatterplot <- renderPlot (height=700, width=1300, {
+    plot <- ggplot() + 
+      coord_cartesian() + 
+      scale_x_continuous() +
+      scale_y_continuous() +
+      labs(title='Five Highest Causes of Death in US and Mexico in Children 0 to 4 Years') +
+      labs(x=paste("Years"), y=paste("Deaths")) +
+      labs(color='Causes of Death') +
+      facet_wrap (~COUNTRY) +
+      layer(data=df(), 
+            mapping=aes(x=as.numeric((YEAR)), y=DEATHS_0_TO_4_YEARS, color=GBDCHILDCAUSES), 
+            stat="identity", 
+            stat_params=list(), 
+            geom="line",
+            geom_params=list(), 
+            position=position_identity()
+            #position=position_jitter(width=0.3, height=0)
+      )
+    plot
+  })
+  
 })

@@ -8,6 +8,12 @@ library(shiny)
 
 navbarPage(
   title = "DV_FinalProject",
+  tabPanel(title= "Scatterplot",
+           sidebarPanel(
+             actionButton(inputId = "clicks3", label = "Show Scatterplot: U.S./Mexico")
+           ),
+           mainPanel(plotOutput("scatterplot"))
+  ),
   tabPanel(title= "Barchart: 0-27 Days",
            sidebarPanel(
              actionButton(inputId="clicks1", label = "Show Barchart: 0-27 Days"),

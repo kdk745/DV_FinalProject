@@ -78,6 +78,51 @@ require(&quot;leaflet&quot;)</code></pre>
 <h2>Our Dataset</h2>
 <p>To create our dataset, we blended several different datasets. Each dataset was for a specific country. Every dataset had the fields Cause of Child Death, Year, Deaths 0-27 Days, Deaths 0-4 years, Deaths 1-59 months.</p>
 </div>
+<div id="head" class="section level2">
+<h2>Head</h2>
+<pre class="r"><code>setwd(&quot;~/DataVisualization/DV_FinalProject&quot;)
+
+file_path &lt;- &quot;ChildDeaths.reformatted.csv&quot;
+
+df &lt;- read.csv(file_path, stringsAsFactors = FALSE)
+View(df)
+# Replace &quot;.&quot; (i.e., period) with &quot;_&quot; in the column names.
+names(df) &lt;- gsub(&quot;\\.+&quot;, &quot;_&quot;, names(df))
+
+head(df)</code></pre>
+<pre><code>##               Country GBDCHILDCAUSES Year Deaths_0_to_27_Days
+## 1 Antigua and Barbuda       HIV/AIDS 2013                   0
+## 2 Antigua and Barbuda       HIV/AIDS 2012                   0
+## 3 Antigua and Barbuda       HIV/AIDS 2011                   0
+## 4 Antigua and Barbuda       HIV/AIDS 2010                   0
+## 5 Antigua and Barbuda       HIV/AIDS 2009                   0
+## 6 Antigua and Barbuda       HIV/AIDS 2008                   0
+##   Deaths_1_to_59_Months Deaths_0_to_4_Years
+## 1                     0                   0
+## 2                     0                   0
+## 3                     0                   0
+## 4                     0                   0
+## 5                     0                   0
+## 6                     0                   0</code></pre>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<pre class="r"><code>summary(df)</code></pre>
+<pre><code>##    Country          GBDCHILDCAUSES          Year      Deaths_0_to_27_Days
+##  Length:4830        Length:4830        Min.   :2000   Min.   :    0.00   
+##  Class :character   Class :character   1st Qu.:2003   1st Qu.:    0.00   
+##  Mode  :character   Mode  :character   Median :2006   Median :    1.00   
+##                                        Mean   :2006   Mean   :  194.67   
+##                                        3rd Qu.:2010   3rd Qu.:   38.75   
+##                                        Max.   :2013   Max.   :10183.00   
+##  Deaths_1_to_59_Months Deaths_0_to_4_Years
+##  Min.   :    0.0       Min.   :    0.0    
+##  1st Qu.:    0.0       1st Qu.:    0.0    
+##  Median :    2.0       Median :   11.0    
+##  Mean   :  234.3       Mean   :  429.0    
+##  3rd Qu.:   76.0       3rd Qu.:  190.8    
+##  Max.   :26123.0       Max.   :26193.0</code></pre>
+</div>
 <div id="extract-transform-load" class="section level2">
 <h2>Extract, Transform, Load</h2>
 <p>To fix our data so it can be loaded into Oracle correctly, we first replaced the periods in our column rows with underscores.</p>
@@ -137,7 +182,7 @@ cat(sql)</code></pre>
 ##  Deaths_0_to_4_Years number(38,4)
 ##  );</code></pre>
 </div>
-<div id="head" class="section level2">
+<div id="head-1" class="section level2">
 <h2>Head</h2>
 <pre class="r"><code>head(df)</code></pre>
 <pre><code>##               Country GBDCHILDCAUSES Year Deaths_0_to_27_Days
@@ -155,7 +200,7 @@ cat(sql)</code></pre>
 ## 5                     0                   0
 ## 6                     0                   0</code></pre>
 </div>
-<div id="summary" class="section level2">
+<div id="summary-1" class="section level2">
 <h2>Summary</h2>
 <pre class="r"><code>summary(df)</code></pre>
 <pre><code>##                 Country                                GBDCHILDCAUSES

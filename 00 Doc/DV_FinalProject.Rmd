@@ -19,6 +19,25 @@ To create our dataset, we blended several different datasets.
 Each dataset was for a specific country.
 Every dataset had the fields Cause of Child Death, Year, Deaths 0-27 Days, Deaths 0-4 years, Deaths 1-59 months.
 
+##Head
+```{r, warning=FALSE, message=FALSE}
+setwd("~/DataVisualization/DV_FinalProject")
+
+file_path <- "ChildDeaths.reformatted.csv"
+
+df <- read.csv(file_path, stringsAsFactors = FALSE)
+View(df)
+# Replace "." (i.e., period) with "_" in the column names.
+names(df) <- gsub("\\.+", "_", names(df))
+
+head(df)
+```
+
+##Summary
+```{r, warning=FALSE, message=FALSE}
+summary(df)
+```
+
 ##Extract, Transform, Load
 To fix our data so it can be loaded into Oracle correctly, we first replaced the periods in our column rows with underscores. 
 ```
@@ -80,16 +99,6 @@ And pasted it into SQL developer. We ran this script, then imported our reformat
 
 ```{r, warning=FALSE, message=FALSE}
 source("../ETL.R",echo=FALSE)
-```
-
-##Head
-```{r, warning=FALSE, message=FALSE}
-head(df)
-```
-
-##Summary
-```{r, warning=FALSE, message=FALSE}
-summary(df)
 ```
 
 ##Methodology

@@ -29,7 +29,7 @@ shinyServer(function(input, output) {
   
   #spread(df, YEAR, SUM_PERCENTAGE)
   
-  output$barchart <- renderPlot(height=800, width=1500, {
+  output$barchart <- renderPlot(height=600, width=1300, {
     plot1 <- ggplot() + 
       coord_cartesian() + 
       scale_x_discrete() +
@@ -78,7 +78,7 @@ shinyServer(function(input, output) {
   
   #spread(df, YEAR, SUM_PERCENTAGE)
   
-  output$barchart2 <- renderPlot(height=800, width=1500, {
+  output$barchart2 <- renderPlot(height=600, width=1300, {
     plot2 <- ggplot() + 
       coord_cartesian() + 
       scale_x_discrete() +
@@ -146,5 +146,25 @@ shinyServer(function(input, output) {
       )
     plot
   })
+  
+  output$crosstab <- renderPlot({
+    # Start your code here.
+    
+    # The following is equivalent to KPI Story 2 Sheet 2 and Parameters Story 3 in "Crosstabs, KPIs, Barchart.twb"
+    
+    KPI_Low_Max_value = input$KPI1     
+    KPI_Medium_Max_value = input$KPI2
+    
+    
+    df <- data.frame(fromJSON(getURL(URLencode('skipper.cs.utexas.edu:5001/rest/native/?query="select country, gbdchildcauses, sum(DEATHS_0_TO_4_YEARS) as sum_deaths_0_to_4_years, sum(DEATHS_0_TO_27_DAYS)/sum(DEATHS_0_TO_4_YEARS) as KPI_proportion from child_deaths where (gbdchildcauses = \'Acute lower respiratory infections\' or  gbdchildcauses = \'Congenital anomalies\' or gbdchildcauses = \'Injuries\' or gbdchildcauses = \'Other communicable, perinatal and nutritional conditions\' or gbdchildcauses = \'Prematurity\') group by country, gbdchildcauses order by country;"'),httpheader=c(DB='jdbc:oracle:thin:@sayonara.microlab.cs.utexas.edu:1521:orcl', USER='C##cs329e_znk74', PASS='orcl_znk74', MODE='native_mode', MODEL='model', returnDimensions = 'False', returnFor = 'JSON'), verbose = TRUE) ))
+    
+    df <- df %>% mutate(KPI = ifelse(KPI_PROPORTION <= KPI_Low_Max_value, 'Low', ifelse(KPI_PROPORTION <= KPI_Medium_Max_value, 'Moderate', 'High')))
+    
+    
+    ct <- ggplot(df, aes(GBDCHILDCAUSES, COUNTRY)) + geom_tile(aes(fill = KPI)) + theme_bw() + xlab("") + ylab("") +  geom_text(aes(label = SUM_DEATHS_0_TO_4_YEARS)) + labs(title = "Top 5 Causes of Death in Children Ages 0-4 Years Crosstab") + theme(panel.grid.major = element_line(colour = "black")) +  scale_fill_manual(values=c("#78C3FB", "#16E0BD", "#98838F"))
+    
+    # End your code here.
+    return(ct)
+  }, height=1000, width=1100) # output$distPlot
   
 })

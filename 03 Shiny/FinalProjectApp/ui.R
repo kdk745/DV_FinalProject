@@ -14,6 +14,21 @@ navbarPage(
            ),
            mainPanel(plotOutput("scatterplot"))
   ),
+  tabPanel(title= "Crosstab",
+           sidebarPanel(
+             sliderInput("KPI1", 
+                         "KPI_Low_Max_value:", 
+                         min = 0,
+                         max = 0.49, 
+                         value = 0),
+             sliderInput("KPI2", 
+                         "KPI_Medium_Max_value:", 
+                         min = 0.49,
+                         max = 0.6, 
+                         value = 0.49)
+           ),
+           mainPanel(plotOutput("crosstab"))
+  ),
   tabPanel(title= "Barchart: 0-27 Days",
            sidebarPanel(
              actionButton(inputId="clicks1", label = "Show Barchart: 0-27 Days"),

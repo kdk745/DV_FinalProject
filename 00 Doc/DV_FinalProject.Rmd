@@ -124,7 +124,7 @@ https://zareen.shinyapps.io/FinalProjectApp
 3. Drag "Gbdchildcauses" onto the Pages Shelf.
 4. Right click the y-axis side and select "Add Reference Line." Then select "Average" for the 2nd Value dropdown and select "Value" for the Label.
 5. Step through each Cause.
-![](../02 Tableau/Histogram.jpg)
+![](../02 Tableau/histogram_screenshot.jpg)
 
 ##Treemap: Total Deaths
 1. 

@@ -61,6 +61,25 @@ navbarPage(
              plotOutput("distPlot")
              #plotOutput("distTable")
            )
+  ),
+  tabPanel(title= "Treemap",
+           # Application title
+           headerPanel("Year Control"),
+           
+           # Sidebar with a slider input for number of observations
+           sidebarPanel(
+             sliderInput("slide_Year", 
+                         "Year:", 
+                         min = 2000,
+                         max = 2013, 
+                         value = 2000)
+           ),
+           
+           # Show a plot of the generated distribution
+           mainPanel(
+             plotOutput("treemap")
+             #plotOutput("distTable")
+           )
   )
 )
 

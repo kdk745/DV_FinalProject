@@ -127,10 +127,19 @@ https://zareen.shinyapps.io/FinalProjectApp
 ![](../02 Tableau/histogram_screenshot.jpg)
 
 ##Treemap: Total Deaths
-1. 
+1. Drag COUNTRY onto columns.
+2. Drag DEATHS_0_TO_4_YEARS onto rows.
+3. Go to the 'Show Me' Panel and click on the treemap.
+4. Drag YEARS onto Pages.
+5. Drag DEATHS_0_TO_4_YEARS onto label.
 ![](../02 Tableau/Treemap total deaths1.jpg)
 
 ##Treemap: Deaths by Cause
+1. Drag GBDCHILDCAUSESE onto columns.
+2. Drag DEATHS_0_TO_4_YEARS onto rows.
+3. Go to the 'Show Me' Panel and click on the treemap.
+4. Drag YEARS onto Pages.
+5. Drag DEATHS_0_TO_4_YEARS onto label.
 ![](../02 Tableau/Treemap Deaths by Cause1.jpg)
 
 ##Step 3: Scatterplots

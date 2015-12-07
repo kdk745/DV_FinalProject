@@ -10,13 +10,15 @@ navbarPage(
   title = "DV_FinalProject",
   tabPanel(title= "Barchart: 0-27 Days",
            sidebarPanel(
-             actionButton(inputId="clicks1", label = "Show Barchart: 0-27 Days")
+             actionButton(inputId="clicks1", label = "Show Barchart: 0-27 Days"),
+             verbatimTextOutput("text")
            ),
            mainPanel(plotOutput("barchart"))
   ), 
   tabPanel(title= "Barchart: 1-59 Months",
            sidebarPanel(
-             actionButton(inputId="clicks2", label = "Show Barchart: 1-59 Months")
+             actionButton(inputId="clicks2", label = "Show Barchart: 1-59 Months"),
+             verbatimTextOutput("text2")
            ),
            mainPanel(plotOutput("barchart2"))
   ),

@@ -113,7 +113,7 @@ We followed the methodology learned in class to analyze our data and product int
 4. Drag "Country" onto the Color Shelf.
 5. Select "Circle" under the "Marks" dropdown.
 6. Drag "Deaths 0 to 27 Days" onto Filter. Double Click it and write "1" for At Least, which took out Measles and Malaria.
-![](../02 Tableau/Boxplot.jpg)
+![](../02 Tableau/Boxplot1.jpg)
 
 ##Step 2: Aggregated Measures Analysis
 
@@ -127,10 +127,10 @@ We followed the methodology learned in class to analyze our data and product int
 
 ##Treemap: Total Deaths
 1. 
-![](../02 Tableau/Treemap total deaths.jpg)
+![](../02 Tableau/Treemap total deaths1.jpg)
 
 ##Treemap: Deaths by Cause
-![](../02 Tableau/Treemap Deaths by Cause.jpg)
+![](../02 Tableau/Treemap Deaths by Cause1.jpg)
 
 ##Step 3: Scatterplots
 
@@ -144,7 +144,6 @@ set onto Filters. (If you have not made a set yet, which we will go through late
 6. Change the dropdown under Marks to "Line."
 7. Drag "Gbdchildcauses" to Pages.
 8. Step through each cause.
-![](../02 Tableau/Scatterplot.jpg)
 ![](../02 Tableau/Scatterplot2.jpg)
 ![](../02 Tableau/Scatterplot3.jpg)
 
@@ -156,7 +155,7 @@ set onto Filters. (If you have not made a set yet, which we will go through late
 5. Drag "Country" and the "Five Highest Causes"
 set onto Filters. Select only Mexico and USA for "Country." (If you have not made a set yet, which we will go through later, just drag "Gbdchildcauses" into filters and select which ones you would like to include.)
 6. Change the dropdown under Marks to "Line."
-![](../02 Tableau/MexicoUS Scatterplot.jpg)
+![](../02 Tableau/MexicoUS Scatterplot1.jpg)
 
 #Step 4: Crosstab
 1. Drag "Gbdchildcauses" onto the Columns Shelf.
@@ -210,7 +209,7 @@ END
 10. Drag your new KPI onto Color.
 Click on the menu for each Parameter, and select "Show Parameter Control."
 11. Adjust Parameter settings as desired.
-![](../02 Tableau/Map2.jpg)
+![](../02 Tableau/Map2_1.jpg)
 
 ##Step 5: Barcharts
 

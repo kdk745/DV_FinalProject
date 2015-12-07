@@ -4,6 +4,9 @@ require("RCurl")
 require(ggplot2)
 require(dplyr)
 require(shiny)
+require("portfolio")
+require("RColorBrewer")
+require("extrafont")
 
 shinyServer(function(input, output) {
 
@@ -169,7 +172,7 @@ shinyServer(function(input, output) {
   
 
 
-output$treemap <- renderPlot({
+output$treemap <- renderPlot(height=900, width=900,{
   # Start your code here.
   require("portfolio")
   require("RColorBrewer")

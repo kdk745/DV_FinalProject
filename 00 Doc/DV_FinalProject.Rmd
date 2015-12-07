@@ -102,7 +102,8 @@ source("../ETL.R",echo=FALSE)
 ```
 
 ##Methodology
-We followed the methodology learned in class to analyze our data and product interesting visualizations, the most fascinating of which we put into a Shiny App.
+We followed the methodology learned in class to analyze our data and product interesting visualizations, the most fascinating of which we put into a Shiny App, which can be accessed with this link:
+https://zareen.shinyapps.io/FinalProjectApp
 
 ##Step 1: Non-Aggregated Measures Analysis
 

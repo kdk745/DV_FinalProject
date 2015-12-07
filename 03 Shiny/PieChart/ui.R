@@ -6,20 +6,15 @@ library(shiny)
 shinyUI(pageWithSidebar(
 
 # Application title
-headerPanel("KPI Control"),
+headerPanel("Year Control"),
 
 # Sidebar with a slider input for number of observations
   sidebarPanel(
-    sliderInput("KPI1", 
-                "KPI_Low_Max_value:", 
-                min = 0,
-                max = 0.49, 
-                value = 0),
-    sliderInput("KPI2", 
-                "KPI_Medium_Max_value:", 
-                min = 0.49,
-                max = 0.6, 
-                value = 0.49)
+    sliderInput("Min_Year", 
+                "Year:", 
+                min = 2000,
+                max = 2013, 
+                value = 2000)
   ),
 
 # Show a plot of the generated distribution

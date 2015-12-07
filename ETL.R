@@ -12,9 +12,11 @@ View(df)
 # Replace "." (i.e., period) with "_" in the column names.
 names(df) <- gsub("\\.+", "_", names(df))
 
-View(df) # Uncomment this and  run just the lines to here to get column types to use for getting the list of measures.
+#View(df) # Uncomment this and  run just the lines to here to get column types to use for getting the list of measures.
 
-summary(df)
+#head(df)
+#names(df)
+#summary(df)
 
 measures <- c("Year", "Deaths_0_to_27_Days", "Deaths_1_to_59_Months", "Deaths_0_to_4_Years")
 #measures <- NA # Do this if there are no measures.
@@ -48,8 +50,8 @@ if( length(measures) > 1 || ! is.na(measures)) {
   }
 }
 
-View(df)
-summary(df)
+#View(df)
+#summary(df)
 
 
 #write.csv(df, paste(gsub(".csv", "", file_path), ".reformatted.csv", sep=""), row.names=FALSE, na = "")

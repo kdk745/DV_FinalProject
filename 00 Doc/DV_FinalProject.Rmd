@@ -169,6 +169,22 @@ set onto Filters. Select only Mexico and USA for "Country." (If you have not mad
 12. Change the Color Pallete to "Red-Blue Diverging."
 ![](../02 Tableau/Crosstab.jpg)
 
+Follow the same steps as above but drag "Five Highest Causes" set onto Filters.
+In addition, create parameters so that your KPI can be displayed as "Low," "Medium," and "High":
+1. On the Dimensions Tab, click on the menu, and select "Create Parameter." Name it "KPI Low."
+2. Click on Range. Set Minimum to 0, Maximum to 0.49, and Step Size to 0.01.
+3. Duplicate this Parameter, and edit it. Rename it "KPI Medium." Set Minimum to 0.49, Maximum to 0.6, and Step Size to 0.01.
+4. Duplicate "KPI_percentage_month_over_4_years," and rename it to "KPI_percentage_month_over_4_years (LMH)."
+5. Enter the following calculation:
+IF sum([Deaths 0 to 27 Days])/sum([Deaths 0 to 4 Years])	<= [KPI	Low] THEN "Low"
+ELSEIF sum([Profit])/sum([Sales])	<= [KPI Medium] THEN "Medium"
+ELSE "High"
+END
+6. Drag your new KPI onto Color.
+Click on the menu for each Parameter, and select "Show Parameter Control."
+7. Adjust Parameter settings as desired."
+![](../02 Tableau/Crosstab2.jpg)
+
 ##Make a Set Out of the Five Highest
 1. Drag "Gbdchildcauses" onto the Columns Shelf.
 2. Drag "Deaths 0 to 4 Years" onto the Rows Shelf.
@@ -182,7 +198,7 @@ set onto Filters. Select only Mexico and USA for "Country." (If you have not mad
 2. Drag "Latitude (generated) onto the Rows Shelf."
 3. Drag the "Five Highest Causes 0 to 4 Years" set onto Filters.
 4. Drag "Country" onto Label.
-5. On the Dimensions Tab, click ont he menu, and select "Create Parameter." Name it "KPI Low."
+5. On the Dimensions Tab, click on the menu, and select "Create Parameter." Name it "KPI Low."
 6. Click on Range. Set Minimum to 0, Maximum to 0.49, and Step Size to 0.01.
 7. Duplicate this Parameter, and edit it. Rename it "KPI Medium." Set Minimum to 0.49, Maximum to 0.6, and Step Size to 0.01.
 8. Duplicate "KPI_percentage_month_over_4_years," and rename it to "KPI_percentage_month_over_4_years (LMH)."

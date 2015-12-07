@@ -232,7 +232,16 @@ Click on the menu for each Parameter, and select "Show Parameter Control."
 ![](../02 Tableau/Barchart2.jpg)
 
 ##Barchart: Haiti
+1. Drag "Country" and "Year" to Columns and "Deaths 0 To 4 Years" to Rows
+2. Drag "Country" to Filters and select "Haiti"
+3. Drag "Year" to Color
 ![](../02 Tableau/Haiti Bar.jpg)
 
 ##Pie Chart: Haiti
+1. Drag "Country" to Rows and "Deaths 0 To 4 Years" to columns
+3. Click "Analysis" and select "Aggregate Measures"
+4. Drag "Country" to Filters and select "Haiti"
+5. Drag "Gbdchildcauses" to Color and "Deaths 0 To 4 Years" to Label
+6. Click "Show Me" and select the Pie Chart image
+7. Drag Year to Pages
 ![](../02 Tableau/Haiti Pie.jpg)
